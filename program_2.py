@@ -29,6 +29,29 @@ def contains_uppercase(words: str):
     return False
 
 
+def findss(c: str, b: str):
+    
+    found =  False
+    idx = -1
+
+    for x in range(len(c)):
+        for y in range(len(b)):
+            # we found the letter
+            found = False
+            if c[x] == b[y]:
+                # is the letter in the correct sequence?
+                if idx < y:
+                    idx = y
+                    found = True
+                    break
+                else:
+                    found = False
+        
+        if found == False:
+            break
+        
+    return found
+
 def main():
     start_prog = True
     print("\n\nPlease enter your password information, below are the following contsraints:")
